@@ -1,0 +1,250 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font: 12px "sans-serif", "Arial", "Verdana";
+	background: #F290FD;
+}
+
+p, td, div {
+	font: 12px "sans-serif", "Arial", "Verdana";
+}
+
+th {
+	font: 12px "sans-serif", "Arial", "Verdana";
+	font-weight: bold;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+input, textarea, select {
+	font: 12px "courier new";
+}
+
+a { color:#444; text-decoration:none }
+a:hover{
+	color:#FF6600;
+	text-decoration:underline;
+}
+img { border:0; }
+
+/* common_top */
+#header-div {
+	height: 100px;
+	background: url(../../images/header_bg.gif) no-repeat center #6D1D76;
+}
+#header-div a{
+	color:#ffffff;
+	text-decoration:none
+}
+#header-div a:hover{
+	color:#F5C29A;
+	text-decoration:underline;
+}
+#header-div .logo {
+	height: 40px;
+	padding:5px;
+	float: left;
+}
+#submenu-div { height: 50px;}
+#submenu-div ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#submenu-div li {
+	float: right;
+	padding: 0 10px;
+	margin: 3px 0;
+	border-left: 1px solid #666666;
+}
+#loading-div {
+	clear: right;
+	text-align: right;
+	display: block;
+}
+
+/* common_menu */
+#menu_main {
+	border: 1px solid #345C65;
+	padding: 5px;
+	margin: 5px;
+	background: #FFF;
+}
+#menu_main h3 {
+	margin:0;
+    font-size: 13px;
+	line-height:1.5em;
+    padding-left: 15px;
+}
+#menu_main h3 a:hover{
+	color: #444444;
+    text-decoration: none;
+}
+#menu_main ul {
+	margin:0;
+	padding: 0;
+	list-style-type: none;
+	color: #335B64;
+}
+#menu_main ul li {
+	margin-left: 20px;
+	padding-left: 20px;
+	background: url(../../images/icon/menu_arrow.gif) no-repeat 0px center;
+}
+.explode { background: url(../../images/icon/menu_minus.gif) no-repeat 0px center; }
+.collapse { background: url(../../images/icon/menu_plus.gif) no-repeat 0px center; }
+
+
+/* common class  */
+.action-span { font-weight: bold;}
+.notice-star { color: red;font-weight:bold;}
+.label {
+  text-align: right;
+  vertical-align: top;
+  font-weight: bold;
+  padding: 5px 1em;
+  width: 30%;
+}
+.button-div {text-align: center; padding: 3px 0;}
+.title {
+  color:#666;
+  padding:3px;
+  padding-left:20px;
+  line-height:24px;
+  font-size:18px;
+  font-weight: bold;
+  text-align:center;
+}
+/*
+ 列表部分的样式
+ */
+.list-div {
+  width: 100%;
+  background: #EEF8F9;
+  border: 1px solid #BBDDE5;
+}
+.list-div-ad {border: 0px solid #BBDDE5;}
+.list-div table {width: 100%;}
+.list-div th {
+  line-height: 24px;
+  background: #BBDDE5 url("../../images/admin/th_bg.gif") repeat-x;
+  white-space: nowrap;
+}
+.list-div td {
+  background: #FFF;
+  line-height: 22px;
+}
+.list-div td.first-cell{
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+
+
+/* device index page sortable  */
+#main{
+  background: #FFF;
+  border: 1px solid #BBDDE5;
+  padding: 1px;
+  margin: 10px;
+}
+#nav {
+  background: #FFF;
+  border: 1px solid #BBDDE5;
+  color: #666;
+  font-size: 14px;
+  padding: 7px 10px;
+  margin: 10px;
+  overflow:hidden;
+}
+#ei_nav{
+	background: #F290FD;
+	padding-left: 10px;
+	height: 22px;
+	padding-top: 1px;
+}
+#ei_nav p {
+	font-size:13px;
+	margin: 2px 0 0 0;
+}
+.navbar-front {
+  background: #F5C5FA;
+  line-height: 20px;
+  font-weight: bold;
+  padding: 6px 15px 2px 18px;
+  border-right: 2px solid #278296;
+}
+
+.navbar-back {
+  color: #FFF;
+  line-height: 20px;
+  padding: 4px 15px 4px 18px;
+  border-right: 1px solid #FFF;
+}
+
+.room_main {clear:both;font-size:12px;margin:10px 50px 5px 50px;}
+.room_main_title {margin:0; padding: 5px}
+.room_main_title tr td {font-weight:bold}
+#sortable { list-style-type: none;margin:0;padding:0; width:600px}
+#sortable li { margin:0;padding: 5px; width:600px}
+html>body #sortable li { height: 1.5em; line-height: 1.2em; }
+.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
+/* 鼠标悬浮效果 */
+.menu2 {	padding: 0px; margin: 0px}
+.menu2 li { padding: 0px; float: left; margin: 0px 1px; position: relative; text-align: center; list-style-type: none }
+.menu2 a {padding: 2px; display: block; text-decoration: none}
+.menu2 li em { display: none; font-weight: normal; z-index: 99; background: #FFF68F; font-style: normal; position: absolute;text-align: left;width:200px; height:auto;top:25px;left:-60px;padding:5px}
+
+/* common result page */
+.result {
+	background:#fff;
+	padding:5px;
+	border:1px solid #00CC00;
+	text-align:left;
+	margin:10px;
+}
+.result img {vertical-align: middle;}
+.result span {
+	padding-left:10px;
+	color:#009900;
+	font-size:20px;
+	line-height:22px
+}
+.notification {
+	background:#fff;
+	padding:5px;
+	border:1px solid #FF8080;
+	text-align:left;
+	margin:10px;
+}
+.notification img {vertical-align: middle;}
+.notification span {
+	padding-left:10px;
+	color:red;
+	font-size:20px;
+	line-height:22px
+}
+
+/****** clearfix ******/
+.clearfix:after {
+content:".";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+.clearfix {
+display:inline-block;
+}
+/* Hide from IE Mac \*/
+.clearfix {display:block;}
+/* End hide from IE Mac */	
+
+.w_table tr th{
+	padding:0 15px 0 15px;
+	font-size:1.2em;
+}
