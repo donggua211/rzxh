@@ -1,0 +1,351 @@
+@charset "utf-8";
+body {
+	margin: 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 24px;
+	margin-left: 0px;
+}
+td, th {
+	margin: 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+}
+.bj {
+	background-image: url(../images/lanmu.jpg);
+}
+.configbg {
+	background-image:url(../images/bg.gif);
+	background-repeat:no-repeat;
+	background-position:right;
+}
+.form {
+	margin:0px
+}
+.STYLE1 {
+	color: #CCCCCC
+}
+.STYLE2 {
+	color: #ffffff
+}
+.STYLE3 {
+	font-size: 14px
+}
+.STYLE4 {
+	color: #999999
+}
+.STYLE5 {
+	color: #000000
+}
+.bb {
+	color: #CCCCCC;
+}
+.CameraDiv {
+	height:20;
+	color: #ffffff;
+}
+.DeviceDiv {
+	height:25;
+	color: #ffffff;
+/*	padding-top:7px;*/
+}
+.button2 {
+	BACKGROUND-COLOR: #C9dff7;
+	BORDER-BOTTOM: #a1052a 1px solid;
+	BORDER-LEFT: #f89764 1px solid;
+	BORDER-RIGHT: #a1052a 1px solid;
+	BORDER-TOP: #f89764 1px solid;
+	COLOR: #333333;
+	HEIGHT: 20px
+}
+.button4 {
+	font-size: 12px;
+	background-image:url(../images/an.gif);
+	padding-top:3px;
+	background-color:#64656a;
+	border-width: thin thin thin thin;
+	border-color: #20292e #20292e #20292e #20292e
+}
+a {
+	color: #000000;
+ blr:expression(this.onFocus=this.blur());
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: none;
+	color: #FF0000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+a2 {
+	font-size: 12px;
+	color: #ffffff;
+}
+a2:link {
+	text-decoration: none;
+}
+a2:visited {
+	text-decoration: none;
+	color: #ffffff;
+}
+a2:hover {
+	text-decoration: underline;
+	color: #FFffff;
+}
+a2:active {
+	text-decoration: none;
+	color: #ffffff;
+}
+a.aurl {
+	color:#ffffff;
+}
+a.aurl:link {
+	text-decoration: none;
+}
+a.aurl:visited {
+	text-decoration: none;
+	color: #ffffff;
+}
+a.aurl:hover {
+	text-decoration: none;
+	color: #ffffff;
+}
+a.aurl:active {
+	text-decoration: none;
+	color: #ffffff;
+}
+/* 对讲层 */
+#sidebar {
+	width:160px; /*设定宽度*/
+	height:150px;
+	text-align:left; /*文字左对齐*/
+	top:195px;
+	left:37px;
+	overflow:hidden;/*  超出宽度部分隐藏*/
+	background-color:#D2D2D2;
+	position : absolute;
+}
+.buttonTalk {
+	font:normal 12px verdana, sans-serif;
+	border-right:0px #86BEE8 solid;
+	border-bottom:0px #86BEE8 solid;
+	border-left:0px #86BEE8 solid;
+	border-top:0px #86BEE8 solid;
+	height:27px;
+	width:66px;
+	padding-top:2px;
+	padding-left:2px;
+	/*background:#AAAAAC;
+	background:#D0E6F6;*/
+	background-image: url(../images/talkbutton.gif);
+}
+.btn_down{
+	width:102px;
+	height:26px;
+	background-image:url(../images/downbtn.gif);
+	background-repeat:no-repeat;
+	border:0px;
+	text-align:center;
+	cursor:pointer;
+	color:#FFF;
+	padding-top:3px;
+}
+.btn_down90{
+	width:209px;
+	height:26px;
+	background-image:url(../images/download.gif);
+	background-repeat:no-repeat;
+	border:0px;
+	text-align:center;
+	cursor:pointer;
+	color:#FFF;
+	padding-top:3px;
+}
+.btn_save{
+	width:102px;
+	height:26px;
+	background-image:url(../images/savebtn.gif);
+	background-repeat:no-repeat;
+	border:0px;
+	text-align:center;
+	cursor:pointer;
+	color:#FFF;
+	padding-top:3px;
+}
+.btn_savecancle{
+	width:74px;
+	height:30px;
+	background-image:url(../images/savecancelbutton.gif);
+	background-repeat:no-repeat;
+	border:0px;
+	text-align:center;
+	cursor:pointer;
+	color:#FFF;
+	padding-top:3px;
+}
+.input_back{ width:150px; height:18px; vertical-align:middle;}
+
+.padding_left1{ padding-left:10px;}
+
+#page_container 
+{
+	width: 100%;
+	height: 100%;
+	margin:auto;
+	padding-top:0px;
+}
+#main_top
+{
+	width: 100%;
+	height: 80px;
+	background: #323941;
+	background-image:url(../images/topbg.gif);
+	background-repeat:repeat-x;
+}
+#main_top_logo
+{
+	float: left;
+	width: 30%;
+	height: 80px;
+	padding-top:12px;
+}
+#main_top_exit
+{
+	float: right;
+	width: 68%;
+	height: 80px;
+	padding-right:15px;
+	padding-top:57px;
+}
+#main_menu
+{
+	width: 100%;
+	height: 62px;
+	background: #686868;
+	background-image:url(../images/caidan.gif);
+	background-repeat:repeat-x;
+}
+#main_body
+{
+	width: 100%;
+	height: expression(body.clientHeight-170);
+	background: #20292e;
+	margin-right:20px;
+	margin-left:20px;
+}
+#main_body_left
+{
+	float: left;
+	width: 170px;
+	height:100%;
+	font-size:12px;
+	overflow:auto;
+	SCROLLBAR-BASE-COLOR:#303030;
+	Scrollbar-Highlight-Color:#606060;
+	SCROLLBAR-TRACK-COLOR: #7F7F7F;
+	SCROLLBAR-DARKSHADOW-COLOR: #5B5B5B;
+	SCROLLBAR-SHADOW-COLOR: #545454;
+	padding-top:15px;
+	padding-right:10px;
+	border-right:solid;
+	border-right-width:2px;
+	border-right-color:63686e;
+}
+#main_body_right
+{
+	padding-top:15px;
+	float: right;
+	width: expression(body.clientWidth-230);
+	height:100%;
+}
+#main_body_right_left
+{
+	float: left;
+	width: expression(body.clientWidth-500);
+	height:100%;
+}
+#main_body_right_right
+{
+	float: right;
+	height:100%;
+}
+#main_bottom
+{
+	width:100%;
+	height: 26px;
+	padding-right:20px;
+	color: #000;
+	background-color:#FFFFFF;
+}
+
+#main_body_right_left_playback
+{
+	float: left;
+	width: expression(body.clientWidth-490);
+	height:expression(body.clientHeight-285);
+}
+#main_body_right_right_playback
+{
+	width:220px;
+	float: right;
+	height:expression(body.clientHeight-285);
+	margin-right:15px;
+}
+#main_body_right_time
+{
+	width: 100%;
+	height:75px;
+}
+#log_body_left
+{
+	float: left;
+	width: expression(body.clientWidth-250);
+	height:100%;
+	padding-top:15px;
+	padding-left:15px;
+}
+#log_body_right
+{
+	padding-right:10px;
+	padding-top:15px;
+	float: right;
+	height:100%;
+}
+#config_body_left
+{
+	float: left;
+	width: 170px;
+	height:100%;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-left:10px;
+	padding-right:10px;
+	border-right:solid;
+	border-right-width:2px;
+	border-right-color:63686e;
+}
+#login_body
+{
+	width: 100%;
+	height: expression(body.clientHeight-106);
+	background: #3b4046;
+}
+
+.CustomBtn {
+	width:70px;
+	height:20px;
+	padding-top:1px;
+	vertical-align:middle;
+	border:1 solid #6C798A;
+	background-color:#A8B4C0;
+	cursor:pointer;
+}
