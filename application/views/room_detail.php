@@ -130,7 +130,7 @@
 		}
 		?>
 		</td></tr>
-		<tr><td>是否启用声音报警: </td><td><input id="sound_alert_1" type="radio" name="sound_alert" value="1" />是 <input id="sound_alert_0" type="radio" name="sound_alert" value="0" />否</td></tr>
+		<tr><td>是否启用声音报警: </td><td><input id="sound_alert_1_num" type="radio" name="sound_alert" value="1" />是 <input id="sound_alert_0_num" type="radio" name="sound_alert" value="0" />否</td></tr>
 		<tr><td colspan="2">
 			<input type="submit" name="submit" value="添加新策略" />
 			<input type="hidden"  name="condition" value="eq" />
@@ -166,7 +166,7 @@
 		}
 		?>
 		</td></tr>
-		<tr><td>是否启用声音报警: </td><td><input id="sound_alert_1" type="radio" name="sound_alert" value="1" />是 <input id="sound_alert_0" type="radio" name="sound_alert" value="0" />否</td></tr>
+		<tr><td>是否启用声音报警: </td><td><input id="edit_sound_alert_1" type="radio" name="sound_alert" value="1" />是 <input id="edit_sound_alert_0" type="radio" name="sound_alert" value="0" />否</td></tr>
 		<tr><td colspan="2">
 			<input type="submit" name="submit" value="编辑策略" />
 			<input type="hidden" id="strategy_id" name="strategy_id" value="" />
@@ -201,7 +201,7 @@
 		}
 		?>
 		</td></tr>
-		<tr><td>是否启用声音报警: </td><td><input id="sound_alert_1" type="radio" name="sound_alert" value="1" />是 <input id="sound_alert_0" type="radio" name="sound_alert" value="0" />否</td></tr>
+		<tr><td>是否启用声音报警: </td><td><input id="edit_sound_alert_1_num" type="radio" name="sound_alert" value="1" />是 <input id="edit_sound_alert_0_num" type="radio" name="sound_alert" value="0" />否</td></tr>
 		<tr><td colspan="2">
 			<input type="submit" name="submit" value="编辑策略" />
 			<input type="hidden"  name="condition" value="eq" />
@@ -304,6 +304,9 @@
 									$.each(result.groups, function(i, field){
 										$("#group_id_" + UrlDecode(field)).attr('checked', 'checked');
 									});
+									
+									$("#edit_sound_alert_" + UrlDecode(result.sound_alert)).attr('checked', 'checked');
+									
 								}
 						}, "json");
 					});
@@ -421,6 +424,8 @@
 									$.each(result.groups, function(i, field){
 										$("#group_id_" + UrlDecode(field) + "_num").attr('checked', 'checked');
 									});
+									
+									$("#edit_sound_alert_" + UrlDecode(result.sound_alert) + "_num").attr('checked', 'checked');
 								}
 						}, "json");
 					});

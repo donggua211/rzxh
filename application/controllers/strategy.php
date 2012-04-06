@@ -38,6 +38,7 @@ class Strategy extends CI_Controller
 			$strategy['sound_alert'] = ($this->input->post('sound_alert')) ? 1 : 0;
 			
 			$strategy['group_id'] = $this->input->post('group_id');
+			print_r($strategy);
 			
 			if($strategy['value'] === FALSE || empty($strategy['condition']) || empty($strategy['content']) || empty($strategy['period_id']))
 			{
@@ -77,9 +78,11 @@ class Strategy extends CI_Controller
 			$strategy['value'] = $this->input->post('value');
 			$strategy['condition'] = $this->input->post('condition');
 			$strategy['warning_level'] = ($this->input->post('level')) ? $this->input->post('level') : 0;
-			$strategy['warning_content'] = $this->input->post('warning_content');
+			$strategy['warning_content'] = $this->input->post('content');
 			$strategy['device_id'] = $this->input->post('device_id');
 			$strategy['period_id'] = $this->input->post('period_id');
+			
+			$strategy['sound_alert'] = $this->input->post('sound_alert');
 			
 			$strategy['groups'] = ($this->input->post('group_id')) ? $this->input->post('group_id') : array();
 			
