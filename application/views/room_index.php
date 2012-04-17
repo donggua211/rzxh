@@ -23,10 +23,8 @@
 
 <div id="dialog-modal" title="Basic modal dialog" style="display:none"></div>
 
-<embed id="Player" Played="1" src="" autostart="false" loop="true" style="display:none">
 <script>
 	$(document).ready(function() {
-		sound_alerm('stop');
 		refresh_device_status();
 		setInterval("refresh_device_status()", <?php $CI = & get_instance();echo $CI->config->config['site_setting']['basic']['refresh_interval']; ?>);
 		
@@ -151,12 +149,13 @@
 	}
 	
 	function sound_alerm(action){
-		var sound = '<?php echo img_base_url() ?>' + 'warn.mp3';
 		if(action == 'start'){
-			$("#Player").attr('src', sound);
+			document.getElementById("mp").play();
 		}
 		else{
-			$("#Player").attr('src', '');
+			document.getElementById("mp").pause();
 		}
 	}
 </script>
+
+<embed src="<?php echo img_base_url() ?>warn.mp3" id="mp" align="center" border="0" autostart="true" loop="true" style="display:none">
