@@ -4,7 +4,7 @@ set_time_limit(0);
 include('multi_curl.class.include.php');
 
 //配置变量
-$crontab_url = 'http://localhost/rzxh/configer/cron/room/';
+$crontab_url = 'http://localhost/project/rzxh/trunk/configer/cron/room/';
 $mysql_conf['server'] = 'localhost';
 $mysql_conf['user'] = 'root';
 $mysql_conf['password'] = '';
@@ -29,10 +29,12 @@ $m = new Http_MultiRequest();
 $m->setUrls($urls);
 
 // parallel fetch（并行抓取）:
-$data = $m->exec();
+//$data = $m->exec();
 
 
-/*serial fetch（串行抓取）:
+//serial fetch（串行抓取）:
+$data = $m->serial_exe();
+/*
 foreach ($urls as $url)
 {
     $data[] = $m->execOne($url);
