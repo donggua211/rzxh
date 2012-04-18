@@ -4,7 +4,7 @@ set_time_limit(0);
 include('multi_curl.class.include.php');
 
 //配置变量
-$crontab_url = 'http://localhost/project/rzxh/trunk/configer/cron/room/';
+$crontab_url = 'http://localhost/configer/cron/room/';
 $mysql_conf['server'] = 'localhost';
 $mysql_conf['user'] = 'root';
 $mysql_conf['password'] = '';
