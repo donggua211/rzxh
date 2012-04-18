@@ -71,6 +71,30 @@ class Http_MultiRequest
         return $data;
     }
     
+	//并行抓取所有的内容
+    function serial_exe()
+    {
+        if(empty($this->urls) || !is_array($this->urls))
+        {
+            return false;
+        }
+       
+		$ch = curl_init();
+		
+		curl_setopt( $ch, CURLOPT_HEADER, 0 );
+		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 ); //Set curl to return the data instead of printing it to the browser.
+		
+		foreach($this->urls as $k => $v)
+        {
+			curl_setopt( $ch, CURLOPT_URL, $v );
+			$data[$k] = curl_exec( $ch );
+        }
+		
+		curl_close( $ch );
+		
+		return $data;
+    }
+	
     //只抓取一个网页的内容。
     function execOne($url)
     {
