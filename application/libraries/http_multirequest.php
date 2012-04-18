@@ -1,26 +1,26 @@
-<?php
+ï»¿<?php
 class http_multirequest
 {
-    //Òª²¢ÐÐ×¥È¡µÄurl ÁÐ±í
+    //è¦å¹¶è¡ŒæŠ“å–çš„url åˆ—è¡¨
     private $urls = array();
 
-    //curl µÄÑ¡Ïî
+    //curl çš„é€‰é¡¹
     private $options;
     
-    //¹¹Ôìº¯Êý
+    //æž„é€ å‡½æ•°
     function __construct($options = array())
     {
         $this->setOptions($options);
     }
 
-    //ÉèÖÃurl ÁÐ±í
+    //è®¾ç½®url åˆ—è¡¨
     function setUrls($urls)
     {
         $this->urls = $urls;
         return $this;
     }
 
-    //ÉèÖÃÑ¡Ïî
+    //è®¾ç½®é€‰é¡¹
     function setOptions($options)
     {
         $options[CURLOPT_RETURNTRANSFER] = 1;
@@ -48,7 +48,7 @@ class http_multirequest
         $this->options = $options;
     }
 
-    //²¢ÐÐ×¥È¡ËùÓÐµÄÄÚÈÝ
+    //å¹¶è¡ŒæŠ“å–æ‰€æœ‰çš„å†…å®¹
     function exec()
     {
         if(empty($this->urls) || !is_array($this->urls))
@@ -71,7 +71,7 @@ class http_multirequest
         return $data;
     }
     
-    //Ö»×¥È¡Ò»¸öÍøÒ³µÄÄÚÈÝ¡£
+    //åªæŠ“å–ä¸€ä¸ªç½‘é¡µçš„å†…å®¹ã€‚
     function execOne($url)
     {
         if (empty($url)) {
@@ -84,13 +84,13 @@ class http_multirequest
         return $content;
     }
     
-    //ÄÚ²¿º¯Êý£¬ÉèÖÃÄ³¸öhandle µÄÑ¡Ïî
+    //å†…éƒ¨å‡½æ•°ï¼Œè®¾ç½®æŸä¸ªhandle çš„é€‰é¡¹
     private function setOneOption($ch)
     {
         curl_setopt_array($ch, $this->options);
     }
 
-    //Ìí¼ÓÒ»¸öÐÂµÄ²¢ÐÐ×¥È¡ handle
+    //æ·»åŠ ä¸€ä¸ªæ–°çš„å¹¶è¡ŒæŠ“å– handle
     private function addHandle($mh, $url)
     {
         $ch = curl_init($url);
@@ -99,9 +99,9 @@ class http_multirequest
         return $ch;
     }
 
-    //²¢ÐÐÖ´ÐÐ(ÕâÑùµÄÐ´·¨ÊÇÒ»¸ö³£¼ûµÄ´íÎó£¬ÎÒÕâÀï»¹ÊÇ²ÉÓÃÕâÑùµÄÐ´·¨£¬Õâ¸öÐ´·¨
-    //ÏÂÔØÒ»¸öÐ¡ÎÄ¼þ¶¼¿ÉÄÜµ¼ÖÂcupÕ¼ÓÃ100%, ²¢ÇÒ£¬Õâ¸öÑ­»·»áÔËÐÐ10Íò´ÎÒÔÉÏ
-    //ÕâÊÇÒ»¸öµäÐÍµÄ²»¶®Ô­Àí²úÉúµÄ´íÎó¡£Õâ¸ö´íÎóÔÚPHP¹Ù·½µÄÎÄµµÉÏ¶¼Ïàµ±µÄ³£¼û¡££©
+    //å¹¶è¡Œæ‰§è¡Œ(è¿™æ ·çš„å†™æ³•æ˜¯ä¸€ä¸ªå¸¸è§çš„é”™è¯¯ï¼Œæˆ‘è¿™é‡Œè¿˜æ˜¯é‡‡ç”¨è¿™æ ·çš„å†™æ³•ï¼Œè¿™ä¸ªå†™æ³•
+    //ä¸‹è½½ä¸€ä¸ªå°æ–‡ä»¶éƒ½å¯èƒ½å¯¼è‡´cupå ç”¨100%, å¹¶ä¸”ï¼Œè¿™ä¸ªå¾ªçŽ¯ä¼šè¿è¡Œ10ä¸‡æ¬¡ä»¥ä¸Š
+    //è¿™æ˜¯ä¸€ä¸ªå…¸åž‹çš„ä¸æ‡‚åŽŸç†äº§ç”Ÿçš„é”™è¯¯ã€‚è¿™ä¸ªé”™è¯¯åœ¨PHPå®˜æ–¹çš„æ–‡æ¡£ä¸Šéƒ½ç›¸å½“çš„å¸¸è§ã€‚ï¼‰
     private function execMulitHandle($mh)
     {
         $running = null;

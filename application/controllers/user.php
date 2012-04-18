@@ -6,7 +6,7 @@ class User extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('User_model');
+		$this->load->model('user_model');
 		$this->load->library('session');
 	}
 	
@@ -31,7 +31,7 @@ class User extends CI_Controller {
 			}
 			else
 			{
-				$user_info = $this->User_model->login(array('username'=>$username, 'password'=>$password));
+				$user_info = $this->user_model->login(array('username'=>$username, 'password'=>$password));
 				
 				/* 
 					登录成功, 设置session: staff_id, group_id. 然后跳转至admin首页
@@ -102,7 +102,7 @@ class User extends CI_Controller {
 			else
 			{
 				$update_field['password'] = md5($new_password);
-				if($this->User_model->update($this->user_info['user_id'], $update_field))
+				if($this->user_model->update($this->user_info['user_id'], $update_field))
 				{
 					show_result_page('您的密码已经更新成功! ', '');
 				}
@@ -135,7 +135,7 @@ class User extends CI_Controller {
 	
 	function _check_password($user_id, $password)
 	{
-		$login_info = $this->User_model->check_password($user_id, $password);
+		$login_info = $this->user_model->check_password($user_id, $password);
 		return (empty($login_info)) ? FALSE : TRUE;
 		
 	}
