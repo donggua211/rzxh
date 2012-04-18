@@ -38,7 +38,6 @@ class Strategy extends CI_Controller
 			$strategy['sound_alert'] = ($this->input->post('sound_alert')) ? 1 : 0;
 			
 			$strategy['group_id'] = $this->input->post('group_id');
-			print_r($strategy);
 			
 			if($strategy['value'] === FALSE || empty($strategy['condition']) || empty($strategy['content']) || empty($strategy['period_id']))
 			{
