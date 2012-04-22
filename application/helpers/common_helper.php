@@ -487,6 +487,21 @@
 		return ($a['status'] > $b['status']) ? -1 : 1;
 	}
 	
-	
+	function cache_room_info()
+	{
+		$file_name = APPPATH.'cache/room_cache.php';
+		
+		$CI =& get_instance();
+		$CI->load->model('room_model');
+		$rooms = $CI->room_model->get_rooms();
+		
+		$arr = array();
+		foreach($rooms as $val)
+			$arr[$val['room_id']] = $val['room_num'];
+		
+		$str = var_export( $arr, true );
+		
+		file_put_contents( $file_name, "<?php\n\$rooms=" . $str . ';');
+	}
 /* End of file common_helper.php */
 /* Location: application/helpers/common_helper.php */

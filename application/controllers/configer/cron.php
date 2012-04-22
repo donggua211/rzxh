@@ -32,13 +32,13 @@ class Cron extends CI_Controller
 		}
 	}
 	
-	function room($room_id = 0)
+	function room($room_id = 0, $room_num = 0)
 	{
-		if($room_id < 0)
+		if($room_id < 0 || $room_num < 0 )
 			return false;
 		
 		//room 信息
-		$room_info = $this->room_model->get_one_room($room_id);
+		//$room_info = $this->room_model->get_one_room($room_id);
 		
 		//获取本地缓存
 		$device_status = $this->cache->get('room_'.$room_id);
@@ -53,10 +53,10 @@ class Cron extends CI_Controller
 		}
 		
 		//调用接口，获取设备值
-		$api_result['switch_state'] = $this->device_drive->get_switch_state($room_info['room_num']);
-		$api_result['poweralone_state'] = $this->device_drive->get_poweralone_state($room_info['room_num']);
-		$api_result['powerbind_state'] = $this->device_drive->get_powerbind_state($room_info['room_num']);
-		$api_result['number_state'] = $this->device_drive->get_number_state($room_info['room_num']);
+		$api_result['switch_state'] = $this->device_drive->get_switch_state($room_num);
+		$api_result['poweralone_state'] = $this->device_drive->get_poweralone_state($room_num);
+		$api_result['powerbind_state'] = $this->device_drive->get_powerbind_state($room_num);
+		$api_result['number_state'] = $this->device_drive->get_number_state($room_num);
 		
 		foreach($api_result as $cat => $result)
 		{

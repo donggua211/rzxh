@@ -106,6 +106,9 @@ class Synch extends CI_Controller
 		
 		$this->room_model->insert_rooms($rooms, true);
 		
+		//refresh cached room info
+		cache_room_info();
+		
 		return $rooms;
 	}
 	
