@@ -24,8 +24,7 @@ class Test extends CI_Controller
 	//默认首页
 	function index()
 	{
-		$users = $this->user_model->get_user_by_strategy(4);
-		print_r($users);
+		cache_room_info();
 	}
 }
 
