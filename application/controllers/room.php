@@ -71,6 +71,9 @@ class Room extends CI_Controller
 		//获取策略名
 		$strategy = $this->strategy_model->get_strategy_by_device_array(array_keys($device));
 		
+		//获取 video info
+		$video_info = $this->video_model->get_one_room($room_id);
+		
 		//载入数据
 		$data['room_info'] = $room_info;
 		$data['extendinterface_id'] = $extendinterface_id;
@@ -79,6 +82,7 @@ class Room extends CI_Controller
 		$data['extend_interfaces'] = $extend_interfaces;
 		$data['device'] = $device;
 		$data['strategy'] = $strategy;
+		$data['video_info'] = $video_info;
 		
 		$this->load->view('header');
 		$this->load->view('room_detail', $data);

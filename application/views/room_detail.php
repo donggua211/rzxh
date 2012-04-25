@@ -8,7 +8,9 @@
 	<div id="ei_nav">
 		<p>
 			<span class="navbar-<?php echo ($extendinterface_id == 0) ? 'front' : 'back'?>"><a href="<?php echo site_url('room/detail/'.$room_info['room_id']) ?>">主界面</a></span>
+			<?php if(!empty($video_info)): ?>
 			<span class="navbar-back"><a href="<?php echo site_url('room/video/'.$room_info['room_id']) ?>">视频</a></span>
+			<?php endif; ?>
 		<?php
 			foreach($extend_interfaces as $val)
 				echo '<span class="navbar-'.(($extendinterface_id == $val['extendinterface_id']) ? 'front' : 'back').'"><a href="'.site_url('room/detail/'.$room_info['room_id'].'/'.$val['extendinterface_id']).'">'.$val['extendinterface_name'].'</a></span>';
