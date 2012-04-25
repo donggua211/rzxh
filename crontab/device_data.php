@@ -1,7 +1,7 @@
 <?php
 set_time_limit(0);
 
-include('multi_curl.class.include.php');
+//include('multi_curl.class.include.php');
 
 //配置变量
 $crontab_url = 'http://localhost/configer/cron/room/';
@@ -43,6 +43,8 @@ foreach($rooms as $room_id => $room_num)
 	$urls[] = $crontab_url.$room_id.'/'.$room_num;
 }
 
+
+/*
 $m = new Http_MultiRequest();
 $m->setUrls($urls);
 
@@ -58,5 +60,12 @@ foreach ($urls as $url)
     $data[] = $m->execOne($url);
 }
 */
+
+
+foreach ($urls as $url)
+{
+    $data[] = file_get_contents($url);
+}
+
 
 print_r($data);
