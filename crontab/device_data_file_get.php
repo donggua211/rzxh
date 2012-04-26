@@ -64,7 +64,7 @@ foreach ($urls as $url)
 
 foreach ($urls as $url)
 {
-    $data[] = file_get_contents($url);
+    $data[] = file_get_contents(urlencode($url));
 }
 
 
