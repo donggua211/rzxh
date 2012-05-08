@@ -121,7 +121,7 @@
 							close: function(event, ui) { clear_flash(); sound_alerm('stop');}
 						});
 						
-						if(sound_alert == false) {
+						if(sound_alert == true) {
 							sound_alerm('start');
 						}
 						
@@ -158,4 +158,4 @@
 	}
 </script>
 
-<embed src="<?php echo img_base_url() ?>warn.mp3" id="mp" align="center" border="0" autostart="true" loop="true" style="display:none">
+<embed src="<?php echo img_base_url() ?>warn.mp3" id="mp" align="center" border="0" autostart="false" loop="true" style="display:none">
