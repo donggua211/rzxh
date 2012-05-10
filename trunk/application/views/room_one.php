@@ -70,7 +70,9 @@
 					}
 					
 					if(field.sound_alert == '1')
-						sound_alert == true;
+					{
+						sound_alert = true;
+					}
 				});
 				
 				if(has_warning == true) {
@@ -102,8 +104,9 @@
 							else
 								val_text = text.val;
 							
+							var device_name = $( "#d_" + text.device_id ).attr("value");
 							
-							html_str += '<tr><td>'+$( "#d_"+i ).attr("value")+'</td><td align="center">'+val_text+'</td><td align="center">'+status_text+'</td><td align="center">'+text.active_strategy.strategy_name+'</td><td align="center">'+text.active_strategy.warning_content+'</td></tr>';
+							html_str += '<tr><td>'+device_name+'</td><td align="center">'+val_text+'</td><td align="center">'+status_text+'</td><td align="center">'+text.active_strategy.strategy_name+'</td><td align="center">'+text.active_strategy.warning_content+'</td></tr>';
 						}
 					})
 					html_str += '</table>';

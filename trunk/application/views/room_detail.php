@@ -219,11 +219,10 @@
 
 <script>
 	$(document).ready(function() {
-	<?php if(is_admin()): ?>
 		$( "#sortable" ).sortable({
 			revert: true ,
 			placeholder: "ui-state-highlight",
-			cursor: 'move',
+			cursor: 'move'
 		});
 		
 		$( "#sortable" ).bind( "sortstop", function(event, ui) {
@@ -239,7 +238,7 @@
 				width: 600,
 				modal: true,
 				show: 'slide',
-				hide: 'fade',
+				hide: 'fade'
 			});
 			
 			var device_id =  $(this).attr("value");
@@ -349,7 +348,7 @@
 				width: 600,
 				modal: true,
 				show: 'slide',
-				hide: 'fade',
+				hide: 'fade'
 			});
 			
 			var device_id =  $(this).attr("value");
@@ -464,7 +463,6 @@
 			}, "json");
 		});
 		
-		<?php endif;?>
 		refresh_device_status();
 		
 		setInterval("refresh_device_status()", <?php $CI = & get_instance();echo $CI->config->config['site_setting']['basic']['refresh_interval']; ?>);
