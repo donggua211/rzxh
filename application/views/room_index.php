@@ -98,7 +98,7 @@
 										
 										if(text2.active_strategy.sound_alert == '1')
 										{
-											sound_alert == true;
+											sound_alert = true;
 										}
 									}
 								})
