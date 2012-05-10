@@ -107,14 +107,14 @@ class api extends CI_Controller
 			if($value == -100)
 			{
 				$arr[$device_id]['status'] = -1;
-				$arr[$device_id]['active_strategy'] = array('strategy_name' => '设备未连接', 'warning_content' => '设备未连接', 'sound_alert' => 1);
+				$arr[$device_id]['active_strategy'] = array('strategy_name' => '设备未连接', 'warning_content' => '设备未连接', 'sound_alert' => '0');
 				continue;
 			}
 			
 			if(empty($strategy))
 			{
 				$arr[$device_id]['status'] = 0;
-				$arr[$device_id]['active_strategy'] = array('strategy_name' => '', 'warning_content' => '', 'sound_alert' => 1);
+				$arr[$device_id]['active_strategy'] = array('strategy_name' => '', 'warning_content' => '', 'sound_alert' => '0');
 				continue;
 			}
 			
@@ -158,6 +158,7 @@ class api extends CI_Controller
 			
 			$arr[$device_id]['status'] = $max_status;
 			$arr[$device_id]['active_strategy'] = $active_strategy;
+			$arr[$device_id]['sound_alert'] = $active_strategy['sound_alert'];
 		}
 		
 		$arr = device_sort($arr);
