@@ -4,7 +4,7 @@ set_time_limit(0);
 //include('multi_curl.class.include.php');
 
 //配置变量
-$crontab_url = 'http://localhost/configer/cron/room/';
+$crontab_url = 'http://localhost/project/rzxh/trunk/configer/cron/room/';
 
 $cache_room_filename = dirname(dirname(__FILE__)).'/application/cache/room_cache.php';
 if( file_exists( $cache_room_filename ) )
@@ -61,6 +61,20 @@ foreach ($urls as $url)
 }
 */
 
+$opts = array(   "http => array(
+'method'=&gt;\"GET\",
+'header'=&gt;\"Accept-language: en/r/n\" .
+\"Cookie: foo=bar/r/n\"
+)"
+);
+
+$context = stream_context_create($opts);
+
+/* Sends an http request to www.heliximitate.cn
+with additional headers shown above */
+$fp = fopen('http://www.heliximitate.cn', 'r', false, $context);
+fpassthru($fp);
+fclose($fp);
 
 foreach ($urls as $url)
 {
