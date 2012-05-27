@@ -11,7 +11,7 @@ class Entry extends CI_Controller
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->model('room_model');
-		$this->load->model('User_model');
+		$this->load->model('user_model');
 		
 		//如果没有经登录, 就跳转到admin/login登陆页
 		if (!has_login())
