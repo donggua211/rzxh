@@ -17,7 +17,7 @@ class Cron extends CI_Controller
 		$this->load->model('strategy_model');
 		$this->load->model('history_model');
 		$this->load->helper('email');
-		$this->load->driver('Device_Drive');
+		$this->load->driver('device_drive');
 		$this->load->driver('cache', array('adapter' => 'file'));
 	}
 	
