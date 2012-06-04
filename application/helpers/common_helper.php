@@ -489,7 +489,7 @@
 	
 	function cache_room_info()
 	{
-		$file_name = APPPATH.'cache/room_cache.php';
+		$file_name = BASEPATH.'application/cache/room_cache.php';
 		
 		$CI =& get_instance();
 		$CI->load->model('room_model');
