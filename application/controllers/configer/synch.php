@@ -3,6 +3,8 @@
   配置同步文件. 将接口读取的数据存取本地数据库
   公共权限
  */
+set_time_limit(0);
+
 class Synch extends CI_Controller
 {
 	//构造函数
