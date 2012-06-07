@@ -45,27 +45,39 @@ foreach($rooms as $room_id => $room_num)
 
 
 /*
+ * CURL Mode:
+ * START
+ */
 $m = new Http_MultiRequest();
 $m->setUrls($urls);
 
 // parallel fetch（并行抓取）:
-//$data = $m->exec();
+$data = $m->exec();
 
 
 //serial fetch（串行抓取）:
-$data = $m->serial_exe();
 /*
 foreach ($urls as $url)
 {
     $data[] = $m->execOne($url);
 }
-*/
+/*
+ * CURL Mode:
+ * END
+ */
 
-
+ 
+/*
+ * filet get content Mode:
+ * START
+ *
 foreach ($urls as $url)
 {
     $data[] = file_get_contents($url);
 }
-
+/*
+ * filet get content Mode:
+ * END
+ */
 
 print_r($data);
