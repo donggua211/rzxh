@@ -4,7 +4,7 @@ set_time_limit(0);
 include('multi_curl.class.include.php');
 
 //配置变量
-$crontab_url = 'http://localhost/project/rzxh/trunk/configer/cron/room/';
+$crontab_url = 'http://localhost/configer/cron/room/';
 
 $cache_room_filename = dirname(dirname(__FILE__)).'/application/cache/room_cache.php';
 if( file_exists( $cache_room_filename ) )
