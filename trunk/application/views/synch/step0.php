@@ -16,5 +16,14 @@
 			<input type="reset" class="button" value=" 重置 " name="reset">
 		</div>
 		</form>
+		
+		<br/>
+		<font color="red"><b>或者选择修复数据：</b></font></br>
+		<form action="<?php echo site_url('configer/synch/repair/') ?>" method="post" name="addstaff">
+		<div class="button-div">
+			<input type="hidden" value="1" name="step">
+			<input type="submit" class="button" value=" 修复 " name="submit">
+		</div>
+		</form>
 	<div>
 </div>
