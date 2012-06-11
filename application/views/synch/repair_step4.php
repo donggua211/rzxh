@@ -5,7 +5,7 @@
 
 <div id="main">
 	<div class="room_main">
-		<?php print_r($result); ?></br>完成！
+		完成！
 		</form>
 	<div>
 </div>
