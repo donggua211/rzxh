@@ -43,9 +43,9 @@ define('DEVICE_CAT_POWERBIND', 3);
 define('DEVICE_CAT_NUMBER', 4);
 
 //user type
-define('USER_TYPE_CONFIG', 1); //����Ա
-define('USER_TYPE_ADMIN', 2); //ϵͳ����Ա
-define('USER_TYPE_USER', 3); //�û�
+define('USER_TYPE_CONFIG', 1); //配置员
+define('USER_TYPE_ADMIN', 2); //系统管理员
+define('USER_TYPE_USER', 3); //用户
 
 //history
 define('HISTORY_PER_PAGE', 20);
@@ -54,9 +54,13 @@ define('HISTORY_PER_PAGE', 20);
 define('GROUP_ROLE_READABLE', 1);
 define('GROUP_ROLE_CONFIGABLE', 5);
 
-define('DEVICE_STATE_GET_FAILED', -100);	//ͨ��socket��ȡʧ��
-define('DEVICE_STATE_GET_EMPTY', -200);		//ͨ��socket��ȡΪ��
-define('DEVICE_STATE_GET_NONE', -1);		//ͨ��socket��ȡΪ-1
+define('DEVICE_STATE_GET_NONE', -1);		//通过socket获取为-1
+define('DEVICE_STATE_GET_FAILED', -100);	//通过socket获取失败
+define('DEVICE_STATE_GET_EMPTY', -200);		//通过socket获取为空
+
+define('DEVICE_STATE_GET_NONE_TEXT', '未知');		//通过socket获取为-1
+define('DEVICE_STATE_GET_FAILED_TEXT', '未知');		//通过socket获取失败
+define('DEVICE_STATE_GET_EMPTY_TEXT', '');		//通过socket获取为空
 
 
 /* End of file constants.php */
