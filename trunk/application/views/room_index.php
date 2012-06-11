@@ -56,7 +56,16 @@
 						{
 							$.each(field.device, function(j, device){
 								warning[i][1][j] = device;
-								hovertext += device.name + ': ' + device.val + '<br/>';
+								var val_text = '';
+								if(device.val == '<?php echo DEVICE_STATE_GET_NONE ?>')
+									val_text = '<?php echo DEVICE_STATE_GET_NONE_TEXT ?>';
+								else if(device.val == '<?php echo DEVICE_STATE_GET_FAILED ?>')
+									val_text = '<?php echo DEVICE_STATE_GET_FAILED_TEXT ?>';
+								else if(device.val == '<?php echo DEVICE_STATE_GET_EMPTY ?>')
+									val_text = '<?php echo DEVICE_STATE_GET_EMPTY_TEXT ?>';
+								else
+									val_text = device.val;
+								hovertext += device.name + ': ' + val_text + '<br/>';
 								has_warning = true;
 							});
 						}
@@ -73,22 +82,22 @@
 									if(typeof(text2) != 'undefined')
 									{
 										var status_text = '';
-										if(text2.status == '<?php echo DEVICE_STATE_GET_FAILED ?>')
-											status_text = '获取失败';
-										else if(text2.status == '<?php echo DEVICE_STATE_GET_EMPTY ?>')
-											status_text = '值无效';
-										else if(text2.status == '<?php echo DEVICE_STATE_GET_NONE ?>')
-											status_text = '设备未连接';
+										if(text2.val == '<?php echo DEVICE_STATE_GET_NONE ?>')
+											status_text = '<?php echo DEVICE_STATE_GET_NONE_TEXT ?>';
+										else if(text2.val == '<?php echo DEVICE_STATE_GET_FAILED ?>')
+											status_text = '<?php echo DEVICE_STATE_GET_FAILED_TEXT ?>';
+										else if(text2.val == '<?php echo DEVICE_STATE_GET_EMPTY ?>')
+											status_text = '<?php echo DEVICE_STATE_GET_EMPTY_TEXT ?>';
 										else
 											status_text = text2.status+'级';
 										
 										var val_text = '';
-										if(text2.status == '<?php echo DEVICE_STATE_GET_FAILED ?>')
-											val_text = '获取失败';
-										else if(text2.status == '<?php echo DEVICE_STATE_GET_EMPTY ?>')
-											val_text = '值无效';
-										else if(text2.status == '<?php echo DEVICE_STATE_GET_NONE ?>')
-											val_text = '设备未连接';
+										if(text2.val == '<?php echo DEVICE_STATE_GET_NONE ?>')
+											val_text = '<?php echo DEVICE_STATE_GET_NONE_TEXT ?>';
+										else if(text2.val == '<?php echo DEVICE_STATE_GET_FAILED ?>')
+											val_text = '<?php echo DEVICE_STATE_GET_FAILED_TEXT ?>';
+										else if(text2.val == '<?php echo DEVICE_STATE_GET_EMPTY ?>')
+											val_text = '<?php echo DEVICE_STATE_GET_EMPTY_TEXT ?>';
 										else
 											val_text = text2.val;
 										

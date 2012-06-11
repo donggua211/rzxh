@@ -485,7 +485,17 @@
 				data: "room_id=<?php echo $room_info['room_id'] ?>&extendinterface_id=<?php echo $extendinterface_id?>&devices=<?php echo (isset($device_keys)) ? implode(',', $device_keys) : '' ?>",
 				success: function(data){
 					$.each(data, function(i, field){
-						$( "#value_"+field.device_id ).html(field.val);
+						var val_text = '';
+						if(field.val == '<?php echo DEVICE_STATE_GET_NONE ?>')
+							val_text = '<?php echo DEVICE_STATE_GET_NONE_TEXT ?>';
+						else if(field.val == '<?php echo DEVICE_STATE_GET_FAILED ?>')
+							val_text = '<?php echo DEVICE_STATE_GET_FAILED_TEXT ?>';
+						else if(field.val == '<?php echo DEVICE_STATE_GET_EMPTY ?>')
+							val_text = '<?php echo DEVICE_STATE_GET_EMPTY_TEXT ?>';
+						else
+							val_text = field.val;
+						
+						$( "#value_"+field.device_id ).html(val_text);
 						$( "#status_"+field.device_id ).html('<img src="'+base_url+'images/icon/w_'+field.status+'.gif" alt="'+field.status+'">');
 					});
 				}
