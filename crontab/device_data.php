@@ -1,7 +1,7 @@
 <?php
 set_time_limit(0);
 
-//include('multi_curl.class.include.php');
+include('multi_curl.class.include.php');
 
 //配置变量
 $crontab_url = 'http://localhost/configer/cron/room/';
