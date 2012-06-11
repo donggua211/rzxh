@@ -104,10 +104,20 @@ class api extends CI_Controller
 			$arr[$device_id]['val'] = $value;
 			$arr[$device_id]['device_id'] = $device_id;
 			
-			if($value == -100)
+			if($value == DEVICE_STATE_GET_NONE)
 			{
 				$arr[$device_id]['status'] = -1;
-				$arr[$device_id]['active_strategy'] = array('strategy_name' => '设备未连接', 'warning_content' => '设备未连接', 'sound_alert' => '0');
+				$arr[$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_NONE_TEXT, 'warning_content' => DEVICE_STATE_GET_NONE_TEXT, 'sound_alert' => '0');
+				continue;
+			}elseif($value == DEVICE_STATE_GET_FAILED)
+			{
+				$arr[$device_id]['status'] = -1;
+				$arr[$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_FAILED_TEXT, 'warning_content' => DEVICE_STATE_GET_FAILED_TEXT, 'sound_alert' => '0');
+				continue;
+			}elseif($value == DEVICE_STATE_GET_EMPTY)
+			{
+				$arr[$device_id]['status'] = 0;
+				$arr[$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_EMPTY_TEXT, 'warning_content' => DEVICE_STATE_GET_EMPTY_TEXT, 'sound_alert' => '0');
 				continue;
 			}
 			
@@ -191,13 +201,24 @@ class api extends CI_Controller
 				$value = isset($device_status[$device_id]) ? $device_status[$device_id] : -100;
 				$strategy = isset($device_strategy[$device_id]) ? $device_strategy[$device_id] : array();
 				
-				if($value == -100)
+				if($value == DEVICE_STATE_GET_NONE)
 				{
 					$arr[$val['room_id']]['device'][$device_id]['val'] = $value;
 					$arr[$val['room_id']]['device'][$device_id]['name'] = $device_info['device_name'];
 					$arr[$val['room_id']]['device'][$device_id]['status'] = -1;
-					$arr[$val['room_id']]['device'][$device_id]['active_strategy'] = array('strategy_name' => '设备未连接', 'warning_content' => '设备未连接', 'sound_alert' => 0);
+					$arr[$val['room_id']]['device'][$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_NONE_TEXT, 'warning_content' => DEVICE_STATE_GET_NONE_TEXT, 'sound_alert' => '0');
 					$max_room_status = -1;
+					continue;
+				}elseif($value == DEVICE_STATE_GET_FAILED)
+				{
+					$arr[$val['room_id']]['device'][$device_id]['val'] = $value;
+					$arr[$val['room_id']]['device'][$device_id]['name'] = $device_info['device_name'];
+					$arr[$val['room_id']]['device'][$device_id]['status'] = -1;
+					$arr[$val['room_id']]['device'][$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_FAILED_TEXT, 'warning_content' => DEVICE_STATE_GET_FAILED_TEXT, 'sound_alert' => '0');
+					$max_room_status = -1;
+					continue;
+				}elseif($value == DEVICE_STATE_GET_EMPTY)
+				{
 					continue;
 				}
 				
