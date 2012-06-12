@@ -59,8 +59,8 @@ define('DEVICE_STATE_GET_FAILED', -100);	//通过socket获取失败
 define('DEVICE_STATE_GET_EMPTY', -200);		//通过socket获取为空
 
 define('DEVICE_STATE_GET_NONE_TEXT', '未知');		//通过socket获取为-1
-define('DEVICE_STATE_GET_FAILED_TEXT', '失败');		//通过socket获取失败
-define('DEVICE_STATE_GET_EMPTY_TEXT', '—');		//通过socket获取为空
+define('DEVICE_STATE_GET_FAILED_TEXT', '未知');		//通过socket获取失败
+define('DEVICE_STATE_GET_EMPTY_TEXT', '等待');		//通过socket获取为空
 
 
 /* End of file constants.php */
