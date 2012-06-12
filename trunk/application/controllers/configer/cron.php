@@ -38,7 +38,7 @@ class Cron extends CI_Controller
 			return false;
 		
 		//room 信息
-		//$room_info = $this->room_model->get_one_room($room_id);
+		$room_info = $this->room_model->get_one_room($room_id);
 		
 		//获取本地缓存
 		$device_status = $this->cache->get('room_'.$room_id);
