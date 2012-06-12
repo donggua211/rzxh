@@ -106,17 +106,29 @@ class api extends CI_Controller
 			
 			if($value == DEVICE_STATE_GET_NONE)
 			{
-				$arr[$device_id]['status'] = -1;
+				if(DEVICE_STATE_GET_NONE_ALERT)
+					$arr[$device_id]['status'] = -1;
+				else
+					$arr[$device_id]['status'] = 0;
+				
 				$arr[$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_NONE_TEXT, 'warning_content' => DEVICE_STATE_GET_NONE_TEXT, 'sound_alert' => '0');
 				continue;
 			}elseif($value == DEVICE_STATE_GET_FAILED)
 			{
-				$arr[$device_id]['status'] = -1;
+				if(DEVICE_STATE_GET_FAILED_ALERT)
+					$arr[$device_id]['status'] = -1;
+				else
+					$arr[$device_id]['status'] = 0;
+				
 				$arr[$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_FAILED_TEXT, 'warning_content' => DEVICE_STATE_GET_FAILED_TEXT, 'sound_alert' => '0');
 				continue;
 			}elseif($value == DEVICE_STATE_GET_EMPTY)
 			{
-				$arr[$device_id]['status'] = 0;
+				if(DEVICE_STATE_GET_EMPTY_ALERT)
+					$arr[$device_id]['status'] = -1;
+				else
+					$arr[$device_id]['status'] = 0;
+				
 				$arr[$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_EMPTY_TEXT, 'warning_content' => DEVICE_STATE_GET_EMPTY_TEXT, 'sound_alert' => '0');
 				continue;
 			}
@@ -203,22 +215,38 @@ class api extends CI_Controller
 				
 				if($value == DEVICE_STATE_GET_NONE)
 				{
-					$arr[$val['room_id']]['device'][$device_id]['val'] = $value;
-					$arr[$val['room_id']]['device'][$device_id]['name'] = $device_info['device_name'];
-					$arr[$val['room_id']]['device'][$device_id]['status'] = -1;
-					$arr[$val['room_id']]['device'][$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_NONE_TEXT, 'warning_content' => DEVICE_STATE_GET_NONE_TEXT, 'sound_alert' => '0');
-					$max_room_status = -1;
+					if(DEVICE_STATE_GET_NONE_ALERT)
+					{
+						$arr[$val['room_id']]['device'][$device_id]['val'] = $value;
+						$arr[$val['room_id']]['device'][$device_id]['name'] = $device_info['device_name'];
+						$arr[$val['room_id']]['device'][$device_id]['status'] = -1;
+						$arr[$val['room_id']]['device'][$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_NONE_TEXT, 'warning_content' => DEVICE_STATE_GET_NONE_TEXT, 'sound_alert' => '0');
+						$max_room_status = -1;
+					}
 					continue;
 				}elseif($value == DEVICE_STATE_GET_FAILED)
 				{
-					$arr[$val['room_id']]['device'][$device_id]['val'] = $value;
-					$arr[$val['room_id']]['device'][$device_id]['name'] = $device_info['device_name'];
-					$arr[$val['room_id']]['device'][$device_id]['status'] = -1;
-					$arr[$val['room_id']]['device'][$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_FAILED_TEXT, 'warning_content' => DEVICE_STATE_GET_FAILED_TEXT, 'sound_alert' => '0');
-					$max_room_status = -1;
+					if(DEVICE_STATE_GET_FAILED_ALERT)
+					{
+						$arr[$val['room_id']]['device'][$device_id]['val'] = $value;
+						$arr[$val['room_id']]['device'][$device_id]['name'] = $device_info['device_name'];
+						$arr[$val['room_id']]['device'][$device_id]['status'] = -1;
+						$arr[$val['room_id']]['device'][$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_FAILED_TEXT, 'warning_content' => DEVICE_STATE_GET_FAILED_TEXT, 'sound_alert' => '0');
+						$max_room_status = -1;
+						$max_room_status = -1;
+					}
+					
 					continue;
 				}elseif($value == DEVICE_STATE_GET_EMPTY)
 				{
+					if(DEVICE_STATE_GET_EMPTY_ALERT)
+					{
+						$arr[$val['room_id']]['device'][$device_id]['val'] = $value;
+						$arr[$val['room_id']]['device'][$device_id]['name'] = $device_info['device_name'];
+						$arr[$val['room_id']]['device'][$device_id]['status'] = -1;
+						$arr[$val['room_id']]['device'][$device_id]['active_strategy'] = array('strategy_name' => DEVICE_STATE_GET_EMPTY_TEXT, 'warning_content' => DEVICE_STATE_GET_EMPTY_TEXT, 'sound_alert' => '0');
+						$max_room_status = -1;
+					}
 					continue;
 				}
 				
