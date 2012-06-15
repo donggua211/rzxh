@@ -15,7 +15,7 @@ class Cron extends CI_Controller
 		$this->load->model('room_model');
 		$this->load->model('device_model');
 		$this->load->model('strategy_model');
-		$this->load->model('history_model');
+		//$this->load->model('history_model');
 		$this->load->helper('email');
 		$this->load->driver('device_drive');
 		$this->load->driver('cache', array('adapter' => 'file'));
@@ -157,7 +157,7 @@ class Cron extends CI_Controller
 			
 			$device['val'] = $value;
 			
-			//插入历史记录
+			/*插入历史记录
 			$last_history = $this->history_model->get_last_history_be_device($device_id);
 			
 			if(empty($last_history) || abs($last_history['value'] - $value) > $device_info['error_range'] )
@@ -167,6 +167,7 @@ class Cron extends CI_Controller
 				$history['value'] = $value;
 				$this->history_model->add_history($history);
 			}
+			*/
 			
 			if($device['status'] != 0)
 			{
@@ -191,7 +192,7 @@ class Cron extends CI_Controller
 				$history['device_id'] = $device_id;
 				$history['room_id'] = $room_id;
 				$history['value'] = $value;
-				$this->history_model->add_warning_history($history);
+				//$this->history_model->add_warning_history($history);
 			}
 		}
 		
