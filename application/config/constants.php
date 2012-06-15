@@ -62,9 +62,9 @@ define('DEVICE_STATE_GET_NONE_TEXT', '未知');		//-1的报警文字
 define('DEVICE_STATE_GET_FAILED_TEXT', '等待');		//-100的报警文字
 define('DEVICE_STATE_GET_EMPTY_TEXT', '未知');		//-200的报警文字
 
-define('DEVICE_STATE_GET_NONE_ALERT', 1);		//-1时，是否报警
+define('DEVICE_STATE_GET_NONE_ALERT', 0);		//-1时，是否报警
 define('DEVICE_STATE_GET_FAILED_ALERT', 0);		//-100时，是否报警
-define('DEVICE_STATE_GET_EMPTY_ALERT', 1);		//-200时，是否报警
+define('DEVICE_STATE_GET_EMPTY_ALERT', 0);		//-200时，是否报警
 
 
 /* End of file constants.php */
