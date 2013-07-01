@@ -24,7 +24,11 @@ class Test extends CI_Controller
 	//默认首页
 	function index()
 	{
-		cache_room_info();
+		$this->load->driver('device_drive');
+		
+		$room_num = 19;
+		
+		$api_result['switch_state'] = $this->device_drive->get_room_name();
 	}
 }
 
