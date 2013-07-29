@@ -72,7 +72,8 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = '/var/www/application';
+//	$application_folder = '/var/www/application';
+	$application_folder = 'application';
 
 /*
  * --------------------------------------------------------------------
